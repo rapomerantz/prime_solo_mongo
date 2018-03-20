@@ -1,0 +1,16 @@
+0. Create a collection named orders
+  In Robo 3T, right-clicked on collections, selected create new collection, named it Orders
+  
+1. insert 3 documents: 
+  db.orders.insert({orderDate: new Date('2017-01-0'), orderTotal: '00.0', lineItems: [{unitPrice: '00.0', quantity: 4, productName: "Desk Chair"}]})
+
+2. Find all orders and make them look pretty.
+  db.orders.find().pretty(); 
+  
+3. Find all orders with an orderDate that is after 1/31/2017.
+  db.orders.find({"orderDate" : { $gte : new ISODate("2017-01-31") }});
+  
+4. Change the orderTotal from 2/3/2017 to 63 dollars (you do NOT have to ensure the lineItems' unitPrice * quantity add up to the orderTotal)
+  I couldn't figure out how to use the command line to do this so I right-clicked on the object _ID, went to edit document... and changed the orderTotal there
+  
+ 
